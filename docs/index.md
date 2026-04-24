@@ -4,6 +4,42 @@
 
 ---
 
+## 2026-04-24 — Google Cloud Next 2026 폐막: Virgo Network·ServiceNow·$750M 펀드
+Arista 공동 설계 **Virgo Network**가 TPU 8t + JAX + Pathways 결합 시 **단일 logical cluster에서 100만 칩 near-linear scaling** 달성 — 차세대 모델 학습·추론의 single-job 규모 상한을 재정의. ServiceNow 대기업 에이전트 파트너십, $750M Innovation Fund, Wiz AI Application Protection Platform(AI-APP) 런칭으로 "agentic threat detection"이 엔터프라이즈 기본 스택 테마로 부상. 3일간 Chip → Network → Platform → Agent Governance → App → Mobile까지 전 계층 동시 재편 — OpenAI·Anthropic의 "model + harness" 중심과 대비되는 **infrastructure-to-surface** 풀스택 포지션. Gemini-powered Siri 예고로 Apple × Google 3자 생태계 힌트.
+원본: raw/2026-04-24_Google_Cloud_Next_폐막_Virgo_Network_ServiceNow.md · [Blog.Google](https://blog.google/products/google-cloud/google-cloud-next-2026/) · [9to5Google](https://9to5google.com/2026/04/24/google-cloud-next-2026-workspace-intelligence-tpu/) · [9to5Mac](https://9to5mac.com/2026/04/24/google-teases-gemini-powered-siri-upgrade-during-cloud-next-keynote/)
+
+## 2026-04-23 — Google Gemini Enterprise Agent Platform: Agent Identity (X.509 암호학적 ID)
+모든 에이전트에 **고유 X.509 인증서 기반 cryptographic ID**를 부여, GCP access token을 인증서에 암호학적으로 바인딩해 탈취 재사용을 차단. Service account와 달리 **공유·임퍼소네이션·장기 키 생성이 기본 금지** — 에이전트를 네트워크상의 first-class principal로 취급. **에이전트 보안의 축이 "프롬프트 인젝션 방어"에서 "ID·권한 거버넌스"로 이동**하는 선언이며, Anthropic Managed Agents·OpenAI Agents SDK가 에이전트 *실행*을 플랫폼화한 데 반해 Google은 *identity & governance*를 플랫폼화 — 3사 포지셔닝 차이가 명확해짐. 100만 칩 스케일링과 결합하면 "수백만 에이전트 동시 구동"의 operational unit economics를 실제로 상정한 설계.
+원본: raw/2026-04-23_Gemini_Enterprise_Agent_Identity_Cryptographic_ID.md · [Google Cloud Blog](https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform) · [Google Cloud Docs](https://cloud.google.com/gemini-enterprise-agent-platform/docs/agent-identity-overview) · [SiliconANGLE](https://siliconangle.com/2026/04/23/gemini-enterprise-agent-platform-google-brings-agentic-development-control-one-roof/) · [Infosecurity Magazine](https://www.infosecurity-magazine.com/news/google-ai-agent-identities-gemini/)
+
+## 2026-04-23 — Google Gemini API Deep Research: MCP 서버·네이티브 차트·Max 모드
+Gemini 3.1 Pro 기반 `deep-research-preview-04-2026`·`deep-research-max-preview-04-2026` paid tier public preview. **원격 MCP 서버를 도구로 호출** 가능해지면서 **MCP가 Anthropic·OpenAI·Google의 공통 wire protocol로 확정** — Tool Use의 de-facto 표준 시점. Google Search + MCP + URL Context + Code Execution + File Search를 동시 오케스트레이션, Nano Banana 기반 네이티브 차트·인포그래픽을 보고서 안에 in-line 렌더링. "turn off web access entirely" 옵션으로 custom source-only 폐쇄망 리서치 대응 — 같은 주 OpenAI Privacy Filter와 공통 테마는 **enterprise-grade agent의 data boundary 제어**.
+원본: raw/2026-04-23_Google_Gemini_Deep_Research_MCP_지원.md · [Google AI Release Notes](https://ai.google.dev/gemini-api/docs/release-notes) · [Blog.Google](https://blog.google/technology/google-deepmind/deep-research-max/) · [Crypto Briefing](https://cryptobriefing.com/gemini-api-deep-research-mcp-support/)
+
+## 2026-04-23 — OpenAI Agents SDK Evolution: 내장 샌드박스·Codex 하네스·apply_patch
+Codex 내부 하네스에서 검증된 파일시스템 primitives(`apply_patch` 등)를 Agents SDK 퍼스트클래스로 승격, **E2B·Modal·Daytona·Cloudflare·Vercel·Blaxel·Runloop 7개 sandbox-as-a-service** 파트너 네이티브 지원 — execution layer가 컴퓨트 마켓으로 분화. 메모리 스냅샷·재수화로 장시간 에이전트 세션을 state 손실 없이 중단·재개 가능. Anthropic **Claude Managed Agents API**(4/8)와 같은 주에 "에이전트 하네스 = 플랫폼" 전략을 양사가 공식화 — 코드 에이전트 성능 편차가 프롬프트보다 **파일 편집 primitive의 정밀도**에 의해 결정된다는 인식 확산.
+원본: raw/2026-04-23_OpenAI_Agents_SDK_Evolution.md · [OpenAI 공식](https://openai.com/index/the-next-evolution-of-the-agents-sdk/) · [TechCrunch](https://techcrunch.com/2026/04/15/openai-updates-its-agents-sdk-to-help-enterprises-build-safer-more-capable-agents/) · [Idlen](https://idlen.com/openai-agents-sdk-native-sandbox-codex-harness-apply-patch-april-2026/)
+
+## 2026-04-23 — Anthropic Python SDK v0.95: Sonnet 4/Opus 4 Deprecation·1h 캐시·workspace 격리
+v0.90(4/7)에서 `claude-mythos-preview`(ASL-4, Capybara tier) 모델 문자열 추가, v0.95(4/14)에서 **Claude Sonnet 4·Opus 4 공식 deprecated**. 환경변수 `ENABLE_PROMPT_CACHING_1H`로 프롬프트 캐시 TTL **5분 → 60분 확장**, 2026-02-05부터 organization-level → **workspace-level isolation**으로 캐시 격리 단위 세분화 → regulated industry 도입 가속. Claude Code v2.1.108의 **Skill 툴을 통한 built-in 슬래시 커맨드 dispatch**는 Tool Search Tool과 결합해 "툴 수 증가 = cache miss" 문제를 근본 해결 — **prompt cache가 에이전트 경제학의 1급 시민**으로 승격했음을 보여주는 설계.
+원본: raw/2026-04-23_Anthropic_Python_SDK_v0.95_Mythos_Deprecation.md · [anthropic-sdk-python releases](https://github.com/anthropics/anthropic-sdk-python/releases) · [Anthropic: Token-saving updates](https://www.anthropic.com/news/token-saving-updates) · [Claude Code changelog](https://docs.claude.com/en/docs/claude-code/changelog)
+
+## 2026-04-23 — Claude Code Reasoning Effort 재조정 (Opus 4.7 xhigh 기본화)
+Enterprise PAYG·API의 **기본 모델이 Opus 4.7 + xhigh effort**로 확정. 3월 한때 `medium`으로 내렸다가 "thinking depth 73% 하락" 분석이 돌며 silent downgrade 논란, 4/7 `high`로 공개 복구 → 4/16 `xhigh` 신설 → 4/23 기본화로 마무리. **Reasoning effort가 모델 문자열과 직교하는 제2의 성능 축**으로 완전히 자리잡음 — 같은 Opus 4.7이라도 effort에 따라 실질 성능이 크게 달라짐이 보편 상식. "가격 = 지능의 함수"를 effort level로 세밀 조정하는 시대이며, OpenAI의 reasoning effort 파라미터와 같은 방향.
+원본: raw/2026-04-23_Claude_Code_Reasoning_Effort_Default_변경.md · [Claude API: Effort](https://docs.claude.com/en/api/effort) · [SitePoint](https://www.sitepoint.com/claude-code-2-1-xhigh-auto-verification-guide-2026/) · [Axios](https://www.axios.com/2026/04/16/anthropic-ai-downgrade-power-users)
+
+## 2026-04-23 — Anthropic, Claude Code를 Pro 플랜에서 제거 A/B 테스트 (신규 2%)
+$20/월 Pro 플랜 가격 페이지에서 Claude Code 접근권 제거, Head of Growth가 "신규 prosumer 2% A/B 테스트"로 해명. 공식 코멘트: "구독자당 engagement가 폭증, 현재 플랜이 이를 감당하도록 설계되지 않음" — **정액제 기반 코딩 에이전트의 경제적 지속불가를 프론티어 랩이 처음 공식 인정한 사건**. 에이전트형 코딩 워크로드는 세션당 토큰·툴호출·테스트 반복이 chat 대비 수십~수백 배 — 무제한 구독 → credit/usage **메터링 기반으로의 재편** 시사, 온디바이스·MoE(Qwen3.6, Llama4 Muse/Spark) 담론과 연결.
+원본: raw/2026-04-23_Anthropic_Claude_Code_Pro플랜_제거_논란.md · [The Register](https://www.theregister.com/2026/04/22/anthropic_claude_code_pro_test/) · [XDA Developers](https://www.xda-developers.com/anthropic-cut-claude-code-from-new-pro-subscriptions-calling-it-an-a-b-test/) · [The New Stack](https://thenewstack.io/anthropic-is-thinking-about-removing-claude-code-from-its-cheapest-plan/)
+
+## 2026-04-23 — Anthropic Claude Mythos Preview, 비인가 접근 공식 확인
+Bloomberg/Fortune/TechCrunch 보도로 **제3자 contractor supply chain을 통한 Mythos 비인가 접근**이 공식화. Discord 사설 그룹이 Mercor 유출 내부 정보로 호스팅 위치를 "추측"해 접근, 지속 접근 중이나 악용은 없다고 보도. UK 정부 테스트에서 expert-level 사이버 공격 과제 **73% 성공률**. **ASL-4 모델의 배포 경계가 기술 제약이 아니라 조직 신뢰 체인으로 결정됨**을 드러낸 사례이며, 공격 역량 모델의 능력 확산 시계열을 구조적으로 앞당기는 리스크 — Gemini Enterprise의 Agent Identity 움직임과 같은 주간에 나왔다는 점이 의미심장.
+원본: raw/2026-04-23_Anthropic_Mythos_Unauthorized_Access_확인.md · [Bloomberg](https://www.bloomberg.com/news/articles/2026-04-21/anthropic-mythos-ai-model-unauthorized-access) · [Fortune](https://fortune.com/2026/04/23/anthropic-mythos-ai-model-leak-group-of-users-guessed-location/) · [TechCrunch](https://techcrunch.com/2026/04/23/unauthorized-group-has-gained-access-to-anthropics-exclusive-cyber-tool-mythos/)
+
+## 2026-04-23 — OpenAI Privacy Filter: 오픈웨이트 PII 마스킹 모델 (Apache 2.0)
+총 1.5B / **active 50M** MoE 구조, **128K 컨텍스트**, PII-Masking-300k 벤치에서 out-of-the-box **96% F1**. 이름·주소·이메일·전화·URL·날짜·계정번호·비밀정보 8종 분류, 온디바이스 "filter before send"가 공식 아키텍처 패턴. **프론티어 랩이 주력 거대 클로즈드가 아니라 periphery infrastructure를 Apache 2.0으로 풀어 기업 도입 장벽을 낮추는 전략 전환** — MCP 기반 에이전트의 tool-call 앞단 data egress guardrail 표준 컴포넌트로 자리잡을 가능성. MoE를 단순 성능이 아니라 **경량 특화 엣지 배포**에 쓴 드문 예.
+원본: raw/2026-04-23_OpenAI_Privacy_Filter_오픈소스_출시.md · [VentureBeat](https://venturebeat.com/ai/openai-launches-privacy-filter-open-source-on-device-data-sanitization/) · [Decrypt](https://decrypt.co/2026/04/23/openai-open-source-privacy-filter-chatgpt-pii) · [Help Net Security](https://www.helpnetsecurity.com/2026/04/23/openai-privacy-filter/)
+
 ## 2026-04-22 — OpenAI Workspace Agents (ChatGPT 팀용 Codex 기반)
 Codex 기반 팀 공유 에이전트를 ChatGPT Business/Enterprise/Edu/Teachers에 리서치 프리뷰로 출시. 사용자 오프라인 시에도 **클라우드 상주·비동기 실행**, Slack 통합·스케줄 트리거. Custom GPTs가 개인 도구에서 **팀 인프라**로 진화 — Anthropic Managed Agents(4/8)와 "에이전트-as-Infrastructure" 전략 정면 충돌. 거버넌스·감사·권한이 모델 성능보다 고착성 높은 경쟁 축으로 부상. 5월 6일부터 크레딧 기반 유료화.
 원본: raw/2026-04-22_OpenAI_Workspace_Agents_ChatGPT.md · [OpenAI 공식](https://openai.com/index/introducing-workspace-agents-in-chatgpt/) · [9to5Mac](https://9to5mac.com/2026/04/22/openai-updates-chatgpt-with-codex-powered-workspace-agents-for-teams/)
